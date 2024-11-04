@@ -89,7 +89,7 @@ const Navbar = () => {
   const toggleServicesMenu = () => setIsServicesOpen(!isServicesOpen);
   const toggleCompanyMenu = () => setIsCompanyOpen(!isCompanyOpen);
   return (
-    <Disclosure as="nav" className="navbar">
+    <Disclosure as="nav" className="navbar z-50">
       <div className="mx-auto max-w-7xl p-3 md:p-4 lg:px-8">
         <div className="relative flex h-12 sm:h-20 items-center">
           <div className="flex flex-1 items-center sm:justify-between">
@@ -142,12 +142,12 @@ const Navbar = () => {
                     </div>
                     {/* Submenu */}
                     {item.subMenuComp && isCompanyOpen && (
-                      <div className="absolute left-0 mt-2 space-y-1 bg-white shadow-lg rounded-md">
+                      <div className="absolute left-0 z-50 mt-2 space-y-1 bg-white shadow-lg rounded-md">
                         {item.subMenuComp.map((subItem) => (
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            className="block text-black w-48 hover:bg-gray-300 hover:text-purple py-2 px-3 rounded-md text-base"
+                            className="block text-black w-48 hover:bg-navyblue hover:text-white hover:text-purple py-2 px-3 rounded-md text-base"
                           >
                             {subItem.name}
                           </Link>
@@ -155,12 +155,12 @@ const Navbar = () => {
                       </div>
                     )}
                     {item.subMenu && isServicesOpen && (
-                      <div className="absolute left-0 mt-2 space-y-1 bg-white shadow-lg rounded-md">
+                      <div className="absolute left-0 z-50 mt-2 space-y-1 bg-white shadow-lg rounded-md">
                         {item.subMenu.map((subItem) => (
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            className="block text-black w-48 hover:bg-gray-300 hover:text-purple py-2 px-3 rounded-md text-base"
+                            className="block text-black w-48 hover:bg-navyblue hover:text-white hover:text-purple py-2 px-3 rounded-md text-base"
                           >
                             {subItem.name}
                           </Link>
@@ -189,48 +189,75 @@ const Navbar = () => {
 
       {/* MOBILE NAVIGATION DRAWER */}
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        {/* <Drawerdata> */}
-        <div className="space-y-1">
-          {navigation.map((item) => (
-            <div key={item.name} className="relative">
-              <div className="flex justify-between items-center">
-                <Link
-                  href={item.href}
-                  className={classNames(
-                    item.current ? "bg-gray-900" : "navlinks hover:text-black",
-                    "block py-2 px-4 text-base font-medium"
-                  )}
-                >
-                  {item.name}
-                </Link>
-                {item.subMenu && (
-                  <button onClick={toggleServicesMenu} className="ml-2">
-                    {isServicesOpen ? (
-                      <FiChevronUp className="text-purple" />
-                    ) : (
-                      <FiChevronDown className="text-purple" />
+        <Drawerdata>
+          <div className="space-y-1">
+            {navigation.map((item) => (
+              <div key={item.name} className="relative">
+                <div className="flex justify-between items-center">
+                  <Link
+                    href={item.href}
+                    className={classNames(
+                      item.current
+                        ? "bg-gray-900"
+                        : "navlinks hover:text-black",
+                      "block py-2 px-4 text-base font-medium"
                     )}
-                  </button>
+                  >
+                    {item.name}
+                  </Link>
+                  {item.subMenu && (
+                    <button
+                      onClick={toggleServicesMenu}
+                      className="ml-2 sm:z-0"
+                    >
+                      {isServicesOpen ? (
+                        <FiChevronUp className="text-purple" />
+                      ) : (
+                        <FiChevronDown className="text-purple" />
+                      )}
+                    </button>
+                  )}
+                  {item.subMenuComp && (
+                    <button onClick={toggleCompanyMenu} className="ml-1 sm:z-0">
+                      {isCompanyOpen ? (
+                        <FiChevronUp className="text-purple" />
+                      ) : (
+                        <FiChevronDown className="text-purple" />
+                      )}
+                    </button>
+                  )}
+                </div>
+                {/* Submenu for mobile */}
+                {item.subMenu && isServicesOpen && (
+                  <div className="ml-4 space-y-1 sm:z-0">
+                    {item.subMenu.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.href}
+                        className="block text-black hover:bg-gray-300 hover:text-purple py-2 px-3 rounded-md text-sm"
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+                {item.subMenuComp && isCompanyOpen && (
+                  <div className="absolute left-0 sm:z-0 mt-2 space-y-1 bg-white shadow-lg rounded-md">
+                    {item.subMenuComp.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        href={subItem.href}
+                        className="block text-black w-48 hover:bg-navyblue hover:text-white hover:text-purple py-2 px-3 rounded-md text-base"
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
                 )}
               </div>
-              {/* Submenu for mobile */}
-              {item.subMenu && isServicesOpen && (
-                <div className="ml-4 space-y-1">
-                  {item.subMenu.map((subItem) => (
-                    <Link
-                      key={subItem.name}
-                      href={subItem.href}
-                      className="block text-black hover:bg-gray-300 hover:text-purple py-2 px-3 rounded-md text-sm"
-                    >
-                      {subItem.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        {/* </Drawerdata> */}
+            ))}
+          </div>
+        </Drawerdata>
       </Drawer>
     </Disclosure>
   );
