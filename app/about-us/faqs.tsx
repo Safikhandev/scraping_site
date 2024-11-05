@@ -1,10 +1,15 @@
 "use client";
 
-// components/Faq.js
+// components/Faq.js (or Faq.tsx if renamed to TypeScript)
 import { useState } from "react";
 
+interface FaqItemProps {
+  question: string;
+  answer: string;
+}
+
 const Faq = () => {
-  const faqs = [
+  const faqs: FaqItemProps[] = [
     {
       question: "What is the purpose of this application?",
       answer:
@@ -42,7 +47,11 @@ const Faq = () => {
   );
 };
 
-const FaqItem = ({ faq }) => {
+interface FaqItemComponentProps {
+  faq: FaqItemProps;
+}
+
+const FaqItem = ({ faq }: FaqItemComponentProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
