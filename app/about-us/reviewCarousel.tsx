@@ -4,8 +4,16 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
+// Define a TypeScript interface for the review object
+interface Review {
+  id: number;
+  image: string;
+  text: string;
+  author: string;
+}
+
 const ReviewCarousel = () => {
-  const reviews = [
+  const reviews: Review[] = [
     {
       id: 1,
       image: "/images/screnshot/screenshot1.png",
@@ -46,7 +54,7 @@ const ReviewCarousel = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImage, setSelectedImage] = useState<string>("");
   const [slidesToShow, setSlidesToShow] = useState(1);
 
   useEffect(() => {
@@ -79,7 +87,7 @@ const ReviewCarousel = () => {
     );
   };
 
-  const openModal = (image) => {
+  const openModal = (image: string) => {
     setSelectedImage(image);
     setIsModalOpen(true);
   };

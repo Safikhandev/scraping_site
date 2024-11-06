@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"; // Add react-icons for icons
@@ -37,7 +38,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Data = () => {
+const Drawerdata = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const handleToggle = () => setIsServicesOpen(!isServicesOpen);
@@ -102,4 +103,4 @@ const Data = () => {
   );
 };
 
-export default Data;
+export default Drawerdata;

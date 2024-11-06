@@ -3,7 +3,7 @@ import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi"; // Import Chevron icons
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 import Contactusform from "./Contactus";
@@ -18,42 +18,17 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { name: "Home", href: "/", current: false },
-
   {
     name: "Company",
     href: "#",
     current: false,
     subMenuComp: [
-      {
-        name: "About Us ",
-        href: "/about-us",
-        current: false,
-      },
-      {
-        name: "Case Studies",
-        href: "/case-studies",
-        current: false,
-      },
-      {
-        name: "Contact Us",
-        href: "/contact-us",
-        current: false,
-      },
-      {
-        name: "Faqs",
-        href: "/faq",
-        current: false,
-      },
-      {
-        name: "Privacy Policy",
-        href: "/privacy-policy",
-        current: false,
-      },
-      {
-        name: "Term & Conditions",
-        href: "/terms-of-service",
-        current: false,
-      },
+      { name: "About Us", href: "/about-us", current: false },
+      { name: "Case Studies", href: "/case-studies", current: false },
+      { name: "Contact Us", href: "/contact-us", current: false },
+      { name: "Faqs", href: "/faq", current: false },
+      { name: "Privacy Policy", href: "/privacy-policy", current: false },
+      { name: "Terms & Conditions", href: "/terms-of-service", current: false },
     ],
   },
   {
@@ -62,7 +37,7 @@ const navigation: NavigationItem[] = [
     current: false,
     subMenu: [
       {
-        name: "Web Data Scrapping ",
+        name: "Web Data Scraping",
         href: "/services/website-data-scraping-services",
         current: false,
       },
@@ -83,11 +58,12 @@ function classNames(...classes: string[]) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false); // Toggle state for Services submenu
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
 
   const toggleServicesMenu = () => setIsServicesOpen(!isServicesOpen);
   const toggleCompanyMenu = () => setIsCompanyOpen(!isCompanyOpen);
+
   return (
     <Disclosure as="nav" className="navbar z-50">
       <div className="mx-auto max-w-7xl p-3 md:p-4 lg:px-8">
@@ -140,7 +116,6 @@ const Navbar = () => {
                         </button>
                       )}
                     </div>
-                    {/* Submenu */}
                     {item.subMenuComp && isCompanyOpen && (
                       <div className="absolute left-0 z-50 mt-2 space-y-1 bg-white shadow-lg rounded-md">
                         {item.subMenuComp.map((subItem) => (
@@ -189,75 +164,7 @@ const Navbar = () => {
 
       {/* MOBILE NAVIGATION DRAWER */}
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <Drawerdata>
-          <div className="space-y-1">
-            {navigation.map((item) => (
-              <div key={item.name} className="relative">
-                <div className="flex justify-between items-center">
-                  <Link
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900"
-                        : "navlinks hover:text-black",
-                      "block py-2 px-4 text-base font-medium"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.subMenu && (
-                    <button
-                      onClick={toggleServicesMenu}
-                      className="ml-2 sm:z-0"
-                    >
-                      {isServicesOpen ? (
-                        <FiChevronUp className="text-purple" />
-                      ) : (
-                        <FiChevronDown className="text-purple" />
-                      )}
-                    </button>
-                  )}
-                  {item.subMenuComp && (
-                    <button onClick={toggleCompanyMenu} className="ml-1 sm:z-0">
-                      {isCompanyOpen ? (
-                        <FiChevronUp className="text-purple" />
-                      ) : (
-                        <FiChevronDown className="text-purple" />
-                      )}
-                    </button>
-                  )}
-                </div>
-                {/* Submenu for mobile */}
-                {item.subMenu && isServicesOpen && (
-                  <div className="ml-4 space-y-1 sm:z-0">
-                    {item.subMenu.map((subItem) => (
-                      <Link
-                        key={subItem.name}
-                        href={subItem.href}
-                        className="block text-black hover:bg-gray-300 hover:text-purple py-2 px-3 rounded-md text-sm"
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-                {item.subMenuComp && isCompanyOpen && (
-                  <div className="absolute left-0 sm:z-0 mt-2 space-y-1 bg-white shadow-lg rounded-md">
-                    {item.subMenuComp.map((subItem) => (
-                      <Link
-                        key={subItem.name}
-                        href={subItem.href}
-                        className="block text-black w-48 hover:bg-navyblue hover:text-white hover:text-purple py-2 px-3 rounded-md text-base"
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </Drawerdata>
+        <Drawerdata />
       </Drawer>
     </Disclosure>
   );
