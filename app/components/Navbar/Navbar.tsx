@@ -161,7 +161,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* MOBILE NAVIGATION DRAWER */}
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
         <Drawerdata />
