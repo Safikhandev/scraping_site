@@ -2,7 +2,7 @@
 
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
-
+import Link from "next/link";
 const Index = () => {
   return (
     <>
@@ -21,9 +21,11 @@ const Index = () => {
               </h1>
 
               <div className="my-7 flex justify-center  sm:text-start lg:text-start">
-                <button className="text-sm md:text-sm font-semibold hover:shadow-xl bg-blue text-white py-3 px-3 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
-                  Get Started
-                </button>
+                <Link href="/contact-us">
+                  <button className="text-sm md:text-sm font-semibold hover:shadow-xl bg-blue text-white py-3 px-3 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -6,7 +6,8 @@ interface datatype {
   heading: string;
   imgSrc: string;
   paragraph: string;
-  link: string;
+  link: string; // Text displayed in the link
+  linkUrl: string; // URL for the link
 }
 
 const Aboutdata: datatype[] = [
@@ -16,6 +17,7 @@ const Aboutdata: datatype[] = [
     paragraph:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem",
     link: "Learn more",
+    linkUrl: "/about-us", // Added URL for 'About us'
   },
   {
     heading: "Services.",
@@ -23,13 +25,15 @@ const Aboutdata: datatype[] = [
     paragraph:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem",
     link: "Learn more",
+    linkUrl: "/services", // Added URL for 'Services'
   },
   {
-    heading: "Our Works.",
+    heading: "Portfolio.",
     imgSrc: "/images/aboutus/imgThree.svg",
     paragraph:
       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem",
     link: "Learn more",
+    linkUrl: "/portfolio", // Added URL for 'Portfolio'
   },
 ];
 
@@ -56,7 +60,7 @@ const Aboutus = () => {
               key={i}
               className="hover:bg-navyblue bg-white rounded-3xl mt-16 pt-10 pl-8 pb-10 pr-6 shadow-xl group"
             >
-              <h4 className="text-4xl font-semibold  text-black mb-5 group-hover:text-white">
+              <h4 className="text-4xl font-semibold text-black mb-5 group-hover:text-white">
                 {item.heading}
               </h4>
               <Image
@@ -70,10 +74,10 @@ const Aboutus = () => {
                 {item.paragraph}
               </h4>
               <Link
-                href="#"
+                href={item.linkUrl} // Use the link URL for navigation
                 className="text-lg font-semibold group-hover:text-white text-blue hover-underline"
               >
-                {item.link}
+                {item.link} {/* Display custom text */}
                 <ChevronRightIcon width={20} height={20} />
               </Link>
             </div>

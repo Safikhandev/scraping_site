@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
 const ContentSection = () => {
   // -----  couner section
   const targetValues = [45, 250, 500, 150];
@@ -43,9 +45,11 @@ const ContentSection = () => {
                 goes here.
               </p>
               <div className="mt-7 sm:text-start lg:text-start">
-                <button className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue">
-                  Get Started
-                </button>
+                <Link href="/portfolio">
+                  <button className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue">
+                    Portfolio
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
