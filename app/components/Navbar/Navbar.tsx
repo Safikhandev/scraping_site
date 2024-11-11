@@ -23,10 +23,9 @@ const navigation: NavigationItem[] = [
     href: "#",
     current: false,
     subMenuComp: [
-      { name: "About Us", href: "/about-us", current: false },
       { name: "Case Studies", href: "/case-studies", current: false },
       { name: "Contact Us", href: "/contact-us", current: false },
-      { name: "Faqs", href: "/faq", current: false },
+      { name: "Faqs", href: "/faqs", current: false },
       { name: "Privacy Policy", href: "/privacy-policy", current: false },
       { name: "Terms & Conditions", href: "/terms-of-service", current: false },
     ],
@@ -38,18 +37,18 @@ const navigation: NavigationItem[] = [
     subMenu: [
       {
         name: "Web Data Scraping",
-        href: "/services/website-data-scraping-services",
+        href: "/website-data-scraping-services",
         current: false,
       },
       {
         name: "Web Automation",
-        href: "/services/professional-web-automation-services",
+        href: "/professional-web-automation-services",
         current: false,
       },
     ],
   },
+  { name: "About Us", href: "/about-us", current: false },
   { name: "Portfolio", href: "/portfolio", current: false },
-  { name: "Blog", href: "/blog", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -161,7 +160,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {/* MOBILE NAVIGATION DRAWER */}
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
         <Drawerdata />

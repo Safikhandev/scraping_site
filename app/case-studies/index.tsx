@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Index = () => {
   return (
@@ -18,9 +19,11 @@ const Index = () => {
                 Case Studies
               </h1>
               <div className="my-7 flex justify-center  sm:text-start lg:text-start">
-                <button className="text-sm md:text-sm font-semibold hover:shadow-xl bg-blue text-white py-3 px-3 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
-                  Get Started
-                </button>
+                <Link href="/contact-us">
+                  <button className="text-sm md:text-sm font-semibold hover:shadow-xl bg-blue text-white py-3 px-3 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -52,11 +55,11 @@ const Index = () => {
               From checkout to global sales tax compliance, companies around the
               world use Flowbite to simplify their payment stack.
             </p>
-            <a
-              href="#"
+            <Link
+              href="/services"
               className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-navyblue hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
-              Get started
+              Services
               <svg
                 className="w-5 h-5 ml-2 -mr-1"
                 fill="currentColor"
@@ -69,7 +72,7 @@ const Index = () => {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
           <div className=" lg:mt-0 lg:col-span-5 lg:flex mt-7">
             <Image
@@ -156,11 +159,11 @@ const Index = () => {
               From checkout to global sales tax compliance, companies around the
               world use Flowbite to simplify their payment stack.
             </p>
-            <a
-              href="#"
+            <Link
+              href="/about-us"
               className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-navyblue hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
-              Get started
+              About Us
               <svg
                 className="w-5 h-5 ml-2 -mr-1"
                 fill="currentColor"
@@ -173,7 +176,7 @@ const Index = () => {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
           <div className=" lg:mt-0 lg:col-span-5 lg:flex mt-7">
             <Image

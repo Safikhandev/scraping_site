@@ -2,7 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 interface Review {
   id: number;
@@ -120,9 +125,11 @@ const Index = () => {
                 Services
               </h1>
               <div className="my-7 flex justify-center  sm:text-start lg:text-start">
-                <button className="text-sm md:text-sm font-semibold hover:shadow-xl bg-blue text-white py-3 px-3 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
-                  Get Started
-                </button>
+                <Link href="/contact-us">
+                  <button className="text-sm md:text-sm font-semibold hover:shadow-xl bg-blue text-white py-3 px-3 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -335,21 +342,23 @@ const Index = () => {
                 information efficiently.
               </p>
               <div className="flex justify-center">
-                <button className="flex items-center px-4 py-2 bg-navyblue text-white border border-transparent rounded-md hover:bg-white hover:text-navyblue hover:border-navyblue transition-colors duration-200">
-                  Learn More
-                  <svg
-                    className="ml-2 w-4 h-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 15.293a1 1 0 001.414 0l4.293-4.293a1 1 0 000-1.414l-4.293-4.293a1 1 0 10-1.414 1.414L13.586 10H3a1 1 0 100 2h10.586l-3.293 3.293a1 1 0 000 1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
+                <Link href="/website-data-scraping-services">
+                  <button className="flex items-center px-4 py-2 bg-navyblue text-white border border-transparent rounded-md hover:bg-white hover:text-navyblue hover:border-navyblue transition-colors duration-200">
+                    Learn More
+                    <svg
+                      className="ml-2 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 15.293a1 1 0 001.414 0l4.293-4.293a1 1 0 000-1.414l-4.293-4.293a1 1 0 10-1.414 1.414L13.586 10H3a1 1 0 100 2h10.586l-3.293 3.293a1 1 0 000 1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -383,27 +392,121 @@ const Index = () => {
                 your needs.
               </p>
               <div className="flex justify-center">
-                <button className="flex items-center px-4 py-2 bg-navyblue text-white border border-transparent rounded-md hover:bg-white hover:text-navyblue hover:border-navyblue transition-colors duration-200">
-                  Learn More
-                  <svg
-                    className="ml-2 w-4 h-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.293 15.293a1 1 0 001.414 0l4.293-4.293a1 1 0 000-1.414l-4.293-4.293a1 1 0 10-1.414 1.414L13.586 10H3a1 1 0 100 2h10.586l-3.293 3.293a1 1 0 000 1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
+                <Link href="/professional-web-automation-services">
+                  <button className="flex items-center px-4 py-2 bg-navyblue text-white border border-transparent rounded-md hover:bg-white hover:text-navyblue hover:border-navyblue transition-colors duration-200">
+                    Learn More
+                    <svg
+                      className="ml-2 w-4 h-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 15.293a1 1 0 001.414 0l4.293-4.293a1 1 0 000-1.414l-4.293-4.293a1 1 0 10-1.414 1.414L13.586 10H3a1 1 0 100 2h10.586l-3.293 3.293a1 1 0 000 1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+
+      <section className="bg-gray-100 py-10">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2">
+          {/* Right Column */}
+          <div className="lg:py-20 py-10 flex justify-center sm:justify-center">
+            <Image
+              src="/images/banner/webs.webp"
+              alt="hero-image"
+              width={750}
+              height={0}
+              className="max-w-md md:max-w-lg rounded"
+            />
+          </div>
+          {/* Left Column */}
+          <div className="lg:py-20 py-10 px-5 md:px-10">
+            <div>
+              {/* <button className="text-blue mb-5 bg-lightblue hover:shadow-xl text-xs sm:text-sm md:text-sm font-bold px-6 py-1 rounded-3xl tracking-wider hover:text-white hover:bg-black">
+                DESIGN AGENCY
+              </button> */}
+              <div className="flex items-center mb-2">
+                <div className="flex h-6 w-6 items-center justify-center rounded-lg me-3">
+                  <svg
+                    className="h-6 w-6 text-navyblue"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    data-slot="icon"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                    />
+                  </svg>
+                </div>
+                <p>Premium Architectures Lifestyle</p>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-5">
+                Dedicated to bring your ideas to life
+              </h1>
+              <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-5">
+                Your content for the first column goes here. Your content for
+                the
+                <br /> first column goes here. Your content for the first column
+                goes here.
+                <br /> first column goes here. Your content for the first column
+                goes here. Your content for the first column goes here. Your
+                content for the first column goes here. Your content for the
+                first column goes here.
+                <br /> The first column goes here. Your content for the first
+                column goes here.
+              </p>
+              <div className="mt-7 sm:text-start lg:text-start">
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <ArrowRightIcon className="w-5 h-5 text-blue-500 mr-2 text-white bg-navyblue  rounded" />
+                    Simple & unified building approach of future
+                  </li>
+                  <li className="flex items-center">
+                    <ArrowRightIcon className="w-5 h-5 text-blue-500 mr-2 text-white bg-navyblue  rounded" />
+                    Experienced & committed to our clients from heart
+                  </li>
+                  <li className="flex items-center">
+                    <ArrowRightIcon className="w-5 h-5 text-blue-500 mr-2 text-white bg-navyblue  rounded" />
+                    Beautifully designed for large capacity apartments
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
       {/* ------------------------------------------------------------ */}
       {/* ------------------------------------------------------------ */}
       {/* ------------------------------------------------------------ */}
@@ -485,6 +588,28 @@ const Index = () => {
           </div>
         )}
       </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
+      {/* ---------------------------------------------------------------- */}
     </>
   );
 };
