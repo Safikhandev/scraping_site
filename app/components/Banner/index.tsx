@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const Banner = () => {
   const targetValues = [45, 250, 500, 150];
@@ -46,9 +47,11 @@ const Banner = () => {
                 <br /> goes here.Your content for the first column goes here.
               </p>
               <div className="my-7 sm:text-start lg:text-start">
-                <button className="text-sm md:text-xl font-semibold hover:shadow-xl bg-blue text-white py-3 px-6 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
-                  Get Started
-                </button>
+                <Link href="/contact-us">
+                  <button className="text-sm md:text-xl font-semibold hover:shadow-xl bg-blue text-white py-3 px-6 md:py-3 md:px-7 rounded-full hover:bg-hoblue">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -124,12 +127,33 @@ const Banner = () => {
           ))}
         </div>
       </section>
-
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
+      {/* ----------------------------------------------------- */}
       {/* ----------------- image and content section  -------------------------------------- */}
       <section className="bg-gray-100 py-10">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2">
           {/* Left Column */}
-          <div className="lg:py-20 py-10 px-5 md:px-10">
+          <div className="lg:py-10 py-10 px-5 md:px-10">
             <div>
               <button className="text-blue mb-5 bg-lightblue hover:shadow-xl text-xs sm:text-sm md:text-sm font-bold px-6 py-1 rounded-3xl tracking-wider hover:text-white hover:bg-black">
                 DESIGN AGENCY
@@ -146,15 +170,17 @@ const Banner = () => {
                 goes here.
               </p>
               <div className="mt-7 sm:text-start lg:text-start">
-                <button className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue">
-                  Get Started
-                </button>
+                <Link href="/contact-us">
+                  <button className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="lg:py-20 py-10 flex justify-center sm:justify-center">
+          <div className="lg:py-10 py-10 flex justify-center sm:justify-center">
             <Image
               src="/images/banner/webs.webp"
               alt="hero-image"

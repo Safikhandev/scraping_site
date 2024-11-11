@@ -13,6 +13,7 @@ import Testimonials from "./components/Testimonials/index";
 import Articles from "./components/Articles/index";
 import Joinus from "./components/Joinus/index";
 import Insta from "./components/Insta/index";
+import OverlayImage from "./components/OverlayImage/index";
 import "./globals.css";
 // import VideoCarousel from "./components/VideoCarousel";
 import dynamic from "next/dynamic";
@@ -30,6 +31,7 @@ export default function Home() {
       {/* <Digital /> */}
       {/* <Beliefs /> */}
       {/* <Wework /> */}
+      <OverlayImage />
       <VideoCarousel />
 
       {/* <Ourteam /> */}
