@@ -1,7 +1,14 @@
 import React from "react";
-import Index from "@/app/contact-us/index";
+import Index from "@/components/index";
+import ClientProvider from "@/components/ClientProvider";
+
 const page = () => {
-  return <Index />;
+  return (
+    <>
+      <ClientProvider />
+      <Index />
+    </>
+  );
 };
 
 export default page;

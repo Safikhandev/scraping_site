@@ -6,7 +6,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
-import Contactusform from "./Contactus";
+import Contactusform from "../../../components/Contactus";
 
 interface NavigationItem {
   name: string;
@@ -147,6 +147,7 @@ const Navbar = () => {
             </div>
 
             {/* CONTACT BUTTON */}
+
             <Contactusform />
           </div>
 
