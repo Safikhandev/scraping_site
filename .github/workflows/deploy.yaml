@@ -36,5 +36,5 @@ jobs:
           password: ;CMc/^pGI9NnZq5f
 
           # port: ${{ secrets.FTP_PORT }} # port 21
-          local-dir: .next/ #"dist" # Vite's default build output folder
+          local-dir: out/ #"dist" # Vite's default build output folder
           server-dir: / # Replace with your FTP directory path
