@@ -34,11 +34,8 @@ jobs:
           server: ftp.scrapinggenius.com
           username: u512748088.sufyanasif
           password: ;CMc/^pGI9NnZq5f
-          
+
           # port: ${{ secrets.FTP_PORT }} # port 21
           local-dir: out/ #"dist" # Vite's default build output folder
-<<<<<<< HEAD
           server-dir: public_html/ # Replace with your FTP directory path
-=======
-          server-dir: /  # Replace with your FTP directory path
->>>>>>> f8217f5b83c2486e9ba92381bd4d73ca2493a14b
+
