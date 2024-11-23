@@ -38,6 +38,7 @@ html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
 }
+
 .banner {
   background-image: url("../public/images/digital/bg.png");
   width: 100%;
