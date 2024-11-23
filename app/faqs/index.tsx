@@ -19,7 +19,6 @@ const Index = () => {
               <h1 className="text-4xl mb-5 text-center lg:text-60xl md:text-5xl sm:text-3xl font-bold text-white">
                 FAQs
               </h1>
-
               <div className="my-7 flex justify-center  sm:text-start lg:text-start">
                 <Link href="/contact-us">
                   <button className="text-sm md:text-sm font-semibold hover:shadow-xl bg-blue text-white py-3 px-3 md:py-3 md:px-7 rounded-full hover:bg-hoblue">

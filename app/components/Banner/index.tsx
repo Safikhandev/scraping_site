@@ -110,7 +110,7 @@ const Banner = () => {
       </div>
       {/* ////////    counter  */}
 
-      <section className="bg-gray-100 py-10">
+      {/* <section className="bg-gray-100 py-10">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
           {counters.map((count, index) => (
             <div
@@ -126,7 +126,26 @@ const Banner = () => {
             </div>
           ))}
         </div>
+      </section> */}
+      <section className="bg-gray-100 py-10">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+          {counters.map((count, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center p-4 bg-blue-500 text-dark rounded-lg md:shadow-lg shadow-lg animate-fade-in"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <h2 className="text-4xl">
+                {count}
+                <span className="text-red-500">+</span>{" "}
+              </h2>
+              <hr className="my-2 border-gray-300 w-12 mx-auto" />
+              <p className="text-gray-600">Years in Market</p>
+            </div>
+          ))}
+        </div>
       </section>
+
       {/* ----------------------------------------------------- */}
       {/* ----------------------------------------------------- */}
       {/* ----------------------------------------------------- */}
@@ -180,7 +199,7 @@ const Banner = () => {
           </div>
 
           {/* Right Column */}
-          <div className="lg:py-10 py-10 flex justify-center sm:justify-center">
+          <div className="lg:py-10 py-10 flex justify-center sm:justify-center ">
             <Image
               src="/images/banner/webs.webp"
               alt="hero-image"
