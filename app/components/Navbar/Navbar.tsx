@@ -1,13 +1,13 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 import Contactusform from "../../../components/Contactus";
-
+import Image from "next/image";
 interface NavigationItem {
   name: string;
   href: string;
@@ -51,118 +51,133 @@ const navigation: NavigationItem[] = [
   { name: "Portfolio", href: "/portfolio", current: false },
 ];
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const toggleServicesMenu = () => setIsServicesOpen(!isServicesOpen);
-  const toggleCompanyMenu = () => setIsCompanyOpen(!isCompanyOpen);
+  const toggleDropdown = (menuName: string) => {
+    if (openDropdown === menuName) {
+      setOpenDropdown(null); // Close dropdown if already open
+    } else {
+      setOpenDropdown(menuName); // Open the clicked dropdown
+    }
+  };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setOpenDropdown(null); // Close dropdown if clicked outside
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <Disclosure as="nav" className="navbar z-50">
+    <Disclosure as="nav" className="navbar z-50 bg-white shadow-md">
       <div className="mx-auto max-w-7xl p-3 md:p-4 lg:px-8">
-        <div className="relative flex h-12 sm:h-20 items-center">
-          <div className="flex flex-1 items-center sm:justify-between">
+        <div className="relative flex h-16 items-center">
+          <div className="flex flex-1 items-center justify-between">
             {/* LOGO */}
-            <div className="flex flex-shrink-0 items-center border-right">
+            <div className="flex items-center">
               <Link
                 href="/"
-                className="text-2xl sm:text-4xl font-semibold text-black"
+                className="text-3xl font-bold text-black flex items-center"
               >
-                Desgy Solutions
+                <Image
+                  src="/3.3.png" // Replace with your image path
+                  alt="Desgy Solutions Logo"
+                  width={190} // Specify the width
+                  height={40} // Specify the height
+                  className="mr-2" // Add margin or other styling
+                />
+                {/* Desgy Solutions */}
               </Link>
             </div>
 
-            {/* LINKS */}
-            <div className="hidden lg:flex items-center border-right">
-              <div className="flex justify-end space-x-4">
-                {navigation.map((item) => (
-                  <div key={item.name} className="relative">
-                    <div className="flex items-center">
-                      <Link
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900"
-                            : "navlinks hover:text-black",
-                          "px-3 py-4 rounded-md text-lg font-normal"
+            {/* NAVIGATION LINKS */}
+            <div className="hidden lg:flex space-x-6">
+              {navigation.map((item) => (
+                <div
+                  key={item.name}
+                  className="relative group"
+                  ref={dropdownRef}
+                >
+                  <div
+                    className="flex items-center space-x-1 cursor-pointer"
+                    onClick={() => toggleDropdown(item.name)}
+                  >
+                    <Link
+                      href={item.href}
+                      className="text-lg font-medium text-gray-700 hover:text-black"
+                    >
+                      {item.name}
+                    </Link>
+                    {(item.subMenu || item.subMenuComp) && (
+                      <div>
+                        {openDropdown === item.name ? (
+                          <FiChevronUp className="text-gray-700" />
+                        ) : (
+                          <FiChevronDown className="text-gray-700" />
                         )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </Link>
-                      {item.subMenu && (
-                        <button onClick={toggleServicesMenu} className="ml-1">
-                          {isServicesOpen ? (
-                            <FiChevronUp className="text-purple" />
-                          ) : (
-                            <FiChevronDown className="text-purple" />
-                          )}
-                        </button>
-                      )}
-                      {item.subMenuComp && (
-                        <button onClick={toggleCompanyMenu} className="ml-1">
-                          {isCompanyOpen ? (
-                            <FiChevronUp className="text-purple" />
-                          ) : (
-                            <FiChevronDown className="text-purple" />
-                          )}
-                        </button>
-                      )}
-                    </div>
-                    {item.subMenuComp && isCompanyOpen && (
-                      <div className="absolute left-0 z-50 mt-2 space-y-1 bg-white shadow-lg rounded-md">
-                        {item.subMenuComp.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            href={subItem.href}
-                            className="block text-black w-48 hover:bg-navyblue hover:text-white hover:text-purple py-2 px-3 rounded-md text-base"
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                    {item.subMenu && isServicesOpen && (
-                      <div className="absolute left-0 z-50 mt-2 space-y-1 bg-white shadow-lg rounded-md">
-                        {item.subMenu.map((subItem) => (
-                          <Link
-                            key={subItem.name}
-                            href={subItem.href}
-                            className="block text-black w-48 hover:bg-navyblue hover:text-white hover:text-purple py-2 px-3 rounded-md text-base"
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
                       </div>
                     )}
                   </div>
-                ))}
-              </div>
+
+                  {/* DROPDOWN MENU */}
+                  {(item.subMenu || item.subMenuComp) &&
+                    openDropdown === item.name && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                        {item.subMenu?.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-4 py-2 text-gray-600 hover:bg-navyblue hover:text-white"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                        {item.subMenuComp?.map((subItem) => (
+                          <Link
+                            key={subItem.name}
+                            href={subItem.href}
+                            className="block px-4 py-2 text-gray-600 hover:bg-navyblue hover:text-white"
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                </div>
+              ))}
             </div>
 
             {/* CONTACT BUTTON */}
-
             <Contactusform />
           </div>
 
           {/* MOBILE MENU ICON */}
-          <div className="block lg:hidden">
+          <div className="lg:hidden">
             <Bars3Icon
-              className="block h-6 w-6"
+              className="block h-6 w-6 text-black"
               aria-hidden="true"
-              onClick={() => setIsOpen(true)}
+              onClick={() => toggleDropdown("mobile-menu")}
             />
           </div>
         </div>
       </div>
-      {/* MOBILE NAVIGATION DRAWER */}
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+
+      {/* MOBILE NAVIGATION */}
+      <Drawer
+        isOpen={openDropdown === "mobile-menu"}
+        setIsOpen={() => setOpenDropdown(null)}
+      >
         <Drawerdata />
       </Drawer>
     </Disclosure>
