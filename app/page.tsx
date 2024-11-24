@@ -38,10 +38,10 @@ export default function Home() {
       {/* <Featured /> */}
       {/* <Manage /> */}
       {/* <FAQ /> */}
-      {/* <Testimonials /> */}
+      <Testimonials />
       {/* <Articles /> */}
-      <Joinus />
-      <Insta />
+      {/* <Joinus /> */}
+      {/* <Insta /> */}
     </main>
   );
 }
