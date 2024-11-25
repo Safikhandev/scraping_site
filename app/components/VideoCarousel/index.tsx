@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { FaPlayCircle } from "react-icons/fa";
+// <<<<<<< HEAD
 import { FaUsers, FaDatabase, FaGlobe } from "react-icons/fa";
+// =======
+// >>>>>>> main
 import Image from "next/image";
 import "@/app/globals.css";
 
@@ -15,6 +18,7 @@ const VideoPopup = () => {
 
   return (
     <>
+      {/* <<<<<<< HEAD */}
       <section className="bg-lightgrey py-16">
         <div className="container mx-auto px-4">
           {/* Section Title */}
@@ -90,6 +94,8 @@ const VideoPopup = () => {
       {/* ------------------------------------------------------------------------------ */}
       {/* ------------------------------------------------------------------------------ */}
       {/* ------------------------------------------------------------------------------ */}
+      {/* =======
+>>>>>>> main */}
       <section className="relative mb-20 isolate overflow-hidden bg-black py-24 sm:py-32">
         <Image
           src="/images/banner/banner.webp"
@@ -154,6 +160,81 @@ const VideoPopup = () => {
       ------------------------------------------------------------------ //
       ------------------------------------------------------------------ //
       ------------------------------------------------------------------ */}
+      {/* <<<<<<< HEAD
+======= */}
+      {/* ( */}
+      <section className="bg-[#f0f8ff] py-16">
+        <div className="container mx-auto px-4">
+          {/* Section Title */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-800">
+              About <span className="text-blue-600">Us</span>
+            </h2>
+            <div className="w-16 h-1 bg-blue-600 mx-auto mt-2"></div>
+          </div>
+
+          {/* Content */}
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            {/* Left Card */}
+            <div className=" p-6 text-center">
+              <Image
+                src="/images/banner/banner.webp"
+                alt="Customer Focus"
+                width={100}
+                height={100}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                CUSTOMER FOCUS
+              </h3>
+              <p className="text-gray-600">
+                We firmly believe &apos;Customer Happiness&apos; will pave the
+                way for remarkable customer experiences. Our customers value
+                working with us, which is one of the main reasons for our
+                excellent retention rate of 98%!
+              </p>
+            </div>
+
+            {/* Middle Card */}
+            <div className=" p-6   text-center">
+              <Image
+                src="/images/banner/banner.webp"
+                alt="Data Quality"
+                width={100}
+                height={100}
+                className="mx-auto mb-4"
+              />
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                DATA QUALITY
+              </h3>
+              <p className="text-gray-600">
+                Our experienced experts perform rigorous data quality processes
+                and validations using automated and manual methods. The result
+                of these efforts preserves value for our customers at no
+                additional cost!
+              </p>
+            </div>
+
+            {/* Right Card */}
+            <div className="bg-darkblue text-white p-6 rounded-lg shadow-md">
+              <p className="text-md mb-4">
+                Web Scraping is a Data Scraping Company and web scraping service
+                provider in the USA, India, Australia, UK, UAE, Canada, Germany,
+                Spain, Singapore, Dubai, South Korea, France, Netherlands,
+                Italy, Russia, and other worlds, established in 2009 with the
+                vision of providing technology for continuous business
+                advancements and innovations. We assist enterprise customers
+                with our web data crawling for easily integrating software
+                products as well as solutions.
+              </p>
+              <button className="px-6 py-2 text-black bg-white rounded-lg shadow-lg hover:bg-blue-700  transition">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* >>>>>>> main */}
     </>
   );
 };

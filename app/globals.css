@@ -74,6 +74,7 @@ html {
 .animate-right-to-left {
   animation: right-to-left 15s linear infinite;
 }
+
 .banner {
   background-image: url("../public/images/digital/bg.png");
   width: 100%;
