@@ -61,7 +61,7 @@ const Contactusform = () => {
         <div className="hidden lg:block">
           <button
             type="button"
-            className="justify-end text-xl font-semibold bg-transparent py-3 px-5 lg:px-9 navbutton rounded-full hover:bg-navyblue hover:text-white"
+            className="justify-end text-xl font-semibold bg-transparent py-3 px-5 lg:px-9 navbutton rounded-full hover:bg-[#e76f09] hover:text-white"
             onClick={openModal}
           >
             Get a Quote

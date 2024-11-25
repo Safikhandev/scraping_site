@@ -29,11 +29,12 @@ const Dedicated = () => {
             {/* COLUMN-1 */}
             <div>
               <Image
-                src="/images/dedicated/man.svg"
+                // src="/images/dedicated/man.svg"
+                src="/images/home/home page pic.png"
                 alt="man-icon"
                 width={416}
                 height={530}
-                className="mx-auto md:mx-0"
+                className="mx-auto md:mx-0 rounded"
               />
             </div>
 
@@ -53,9 +54,9 @@ const Dedicated = () => {
                 Quis ipsum suspendisse ultrices gravida risus commodo viverra
                 maecenas accumsan lacus vel facilisis
               </p>
-              <p className="text-2xl font-semibold mt-12 lg:ml-32 preline text-center lg:text-start">
-                {" "}
-                Cathy Hills, CEO
+              <p className="font-medium text-lightblack text-2xl mt-5 text-center lg:text-start">
+                Quis ipsum suspendisse ultrices gravida risus commodo viverra
+                maecenas accumsan lacus vel facilisis
               </p>
             </div>
           </div>

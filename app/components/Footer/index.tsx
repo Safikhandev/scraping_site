@@ -57,14 +57,21 @@ const products: ProductType[] = [
 
 const footer = () => {
   return (
-    <div className="bg-navyblue " id="first-section">
+    <div className="bg-[#2a579b] " id="first-section">
       <div className="mx-auto max-w-2xl pt-8 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="mt-24 grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8">
           {/* COLUMN-1 */}
           <div className="col-span-4">
-            <h3 className="text-white text-4xl font-semibold leading-9 mb-4 lg:mb-20">
+            {/* <h3 className="text-white text-4xl font-semibold leading-9 mb-4 lg:mb-20">
               Desgy Solutions
-            </h3>
+            </h3> */}
+            <Image
+              src="/images/footer/Black.png"
+              className="mb-7"
+              width={110}
+              height={50}
+              alt="Scraping Genius"
+            />
             <div className="flex gap-4">
               <div className="footer-icons">
                 <Link href="https://facebook.com">
@@ -102,7 +109,7 @@ const footer = () => {
           {/* COLUMNS-2/3 */}
           {products.map((product) => (
             <div key={product.id} className="group relative col-span-2">
-              <p className="text-white text-xl font-extrabold mb-9">
+              <p className="text-white text-xl font-bold mb-9">
                 {product.section}
               </p>
               <ul>
@@ -110,7 +117,7 @@ const footer = () => {
                   <li key={index} className="mb-5">
                     <Link
                       href={link.url}
-                      className="text-white text-lg font-normal mb-6 space-links"
+                      className="text-white text-lg hover:text-[#e76f09] font-normal mb-6 space-links"
                     >
                       {link.name}
                     </Link>

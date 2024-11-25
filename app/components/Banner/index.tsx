@@ -198,7 +198,7 @@ const Banner = () => {
             {/* <div className="lg:py-10 py-10 flex justify-center sm:justify-center ">
 >>>>>>> main */}
             <Image
-              src="/images/banner/webs.webp"
+              src="/images/home/web-scraping.png"
               alt="hero-image"
               width={450}
               height={142}
@@ -239,7 +239,7 @@ const Banner = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
             {/* Web Data Scraping */}
             <Link href="/website-data-scraping-services">
-              <div className="bg-navyblue text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
+              <div className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircleIcon className="w-10 h-10 text-blue-600" />
                 </div>
@@ -254,7 +254,7 @@ const Banner = () => {
             </Link>
             {/* Web Automation */}
             <Link href="/professional-web-automation-services">
-              <div className="bg-navyblue text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
+              <div className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CogIcon className="w-10 h-10 text-green-600" />
                 </div>
@@ -268,7 +268,7 @@ const Banner = () => {
               </div>
             </Link>
             {/* Ecommerce Data Scraping */}
-            <div className="bg-navyblue text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
+            <div className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ShoppingBagIcon className="w-10 h-10 text-purple-600" />
               </div>

@@ -58,7 +58,7 @@ const Aboutus = () => {
           {Aboutdata.map((item, i) => (
             <div
               key={i}
-              className="hover:bg-navyblue bg-white rounded-3xl mt-16 pt-10 pl-8 pb-10 pr-6 shadow-xl group"
+              className="hover:bg-[#e4931a] bg-white rounded-3xl mt-16 pt-10 pl-8 pb-10 pr-6 shadow-xl group"
             >
               <h4 className="text-4xl font-semibold text-black mb-5 group-hover:text-white">
                 {item.heading}

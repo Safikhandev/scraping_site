@@ -229,27 +229,27 @@ export default class MultipleItems extends Component {
                       htmlFor="firstName"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      First Name*
+                      Your Name*
                     </label>
                     <input
                       type="text"
                       id="firstName"
                       className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                      placeholder="John"
+                      placeholder="Enter your name"
                     />
                   </div>
                   <div>
                     <label
-                      htmlFor="lastName"
+                      htmlFor="phone"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Last Name*
+                      Phone*
                     </label>
                     <input
-                      type="text"
-                      id="lastName"
+                      type="tel"
+                      id="phone"
                       className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                      placeholder="Doe"
+                      placeholder="Enter phone number"
                     />
                   </div>
                 </div>
@@ -264,23 +264,10 @@ export default class MultipleItems extends Component {
                     type="email"
                     id="email"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                    placeholder="you@example.com"
+                    placeholder="Enter your email"
                   />
                 </div>
-                <div className="mt-4">
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Phone*
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
+
                 <div className="mt-4">
                   <label
                     htmlFor="role"
@@ -292,7 +279,7 @@ export default class MultipleItems extends Component {
                     id="role"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                   >
-                    <option>-- Please choose an option --</option>
+                    <option>Select a service</option>
                     <option>Web Data Scraping</option>
                     <option>Web Automation</option>
                   </select>
@@ -302,19 +289,19 @@ export default class MultipleItems extends Component {
                     htmlFor="details"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Additional Details
+                    Message
                   </label>
                   <textarea
                     id="details"
                     rows={4}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                    placeholder="Please provide specific details and requirements..."
+                    placeholder="Enter Message"
                   ></textarea>
                 </div>
                 <div className="mt-6">
                   <button
                     type="submit"
-                    className="block w-full rounded-md bg-navyblue bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="block w-full rounded-md bg-[#3887fe] bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Submit
                   </button>
@@ -332,20 +319,22 @@ export default class MultipleItems extends Component {
           <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2">
             {/* Left Column */}
             <div className="lg:py-10 py-10 px-5 md:px-10 animate-fade-in-left opacity-0">
-              <div>
-                <h2 className="text-3xl sm:text-4xl md:text-3xl lg:text-3xl font-bold text-black mb-5">
-                  Request a Quote
-                </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-5">
-                  We use the time and money of customers through automating
-                  their data abstractions using smooth data scraping services.
-                </p>
-                <div className="mt-7 sm:text-start lg:text-start">
-                  <Link href="/contact-us">
-                    <button className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue">
-                      Request a Quote
-                    </button>
-                  </Link>
+              <div className="align-middle flex items-center justify-center h-full">
+                <div>
+                  <h2 className="text-3xl sm:text-4xl md:text-3xl lg:text-3xl font-bold text-black mb-5">
+                    Request a Quote
+                  </h2>
+                  <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-5">
+                    We use the time and money of customers through automating
+                    their data abstractions using smooth data scraping services.
+                  </p>
+                  <div className="mt-7 sm:text-start lg:text-start">
+                    <Link href="/contact-us">
+                      <button className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue">
+                        Request a Quote
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -353,9 +342,9 @@ export default class MultipleItems extends Component {
             {/* Right Column */}
             <div className="lg:py-10 py-10 flex justify-center sm:justify-center animate-fade-in-right opacity-0">
               <Image
-                src="/images/banner/webs.webp"
+                src="/images/home/home.png"
                 alt="hero-image"
-                width={250}
+                width={390}
                 height={120}
                 className="max-w-md md:max-w-lg rounded"
               />
