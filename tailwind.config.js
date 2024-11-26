@@ -59,22 +59,7 @@ module.exports = {
       "65xl": ["65px", { lineHeight: "1" }],
       "80xl": ["80px", { lineHeight: "6rem" }],
     },
-    extend: {
-      keyframes: {
-        fadeInLeft: {
-          "0%": { transform: "translateX(-100%)", opacity: "0" },
-          "100%": { transform: "translateX(0)", opacity: "1" },
-        },
-        fadeInRight: {
-          "0%": { transform: "translateX(100%)", opacity: "0" },
-          "100%": { transform: "translateX(0)", opacity: "1" },
-        },
-      },
-      animation: {
-        "fade-in-left": "fadeInLeft 1s ease-out forwards",
-        "fade-in-right": "fadeInRight 1s ease-out forwards",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

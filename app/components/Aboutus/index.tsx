@@ -48,10 +48,16 @@ const Aboutus = () => {
           alt="dots-image"
           className="absolute bottom-1 -left-20"
         />
-        <h3 className="text-center text-blue text-lg tracking-widest">
+        <h3
+          className="text-center text-blue text-lg tracking-widest"
+          data-aos="fade-left"
+        >
           ABOUT WEB SCRAPING
         </h3>
-        <h4 className="text-center text-4xl lg:text-65xl font-bold">
+        <h4
+          className="text-center text-4xl lg:text-65xl font-bold"
+          data-aos="fade-up"
+        >
           Know more about us.
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-16 gap-x-16 lg:gap-x-32">
@@ -59,6 +65,7 @@ const Aboutus = () => {
             <div
               key={i}
               className="hover:bg-[#e4931a] bg-white rounded-3xl mt-16 pt-10 pl-8 pb-10 pr-6 shadow-xl group"
+              data-aos={i % 2 === 0 ? "fade-up" : "fade-left"} // Apply different animations based on index
             >
               <h4 className="text-4xl font-semibold text-black mb-5 group-hover:text-white">
                 {item.heading}

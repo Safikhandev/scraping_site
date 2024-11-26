@@ -8,8 +8,17 @@ import {
   CogIcon, // For Web Automation
   ShoppingBagIcon, // For E-commerce Data Scraping
 } from "@heroicons/react/24/outline";
+import AOS from "aos"; // Import AOS library
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duration of the animation
+      easing: "ease-in-out", // Easing function
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
   const targetValues = [1000, 250, 10, 1];
   const labels = [
     "Projects",
@@ -165,25 +174,43 @@ const Banner = () => {
       <section className="bg-lightgrey py-10">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2">
           {/* Left Column */}
-          <div className="lg:py-10 py-10 px-5 md:px-10 animate-fade-in-left opacity-0">
+          <div className="lg:py-10 py-10 px-5 md:px-10">
             <div>
-              <button className="text-blue mb-5 bg-lightblue hover:shadow-xl text-xs sm:text-sm md:text-sm font-bold px-6 py-1 rounded-3xl tracking-wider hover:text-white hover:bg-black">
+              {/* Add scroll animation to the button */}
+              <button
+                className="text-blue mb-5 bg-lightblue hover:shadow-xl text-xs sm:text-sm md:text-sm font-bold px-6 py-1 rounded-3xl tracking-wider hover:text-white hover:bg-black"
+                data-aos="fade-up" // Scroll animation type
+              >
                 DESIGN AGENCY
               </button>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-5">
+
+              {/* Add scroll animation to the heading */}
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-5"
+                data-aos="fade-up" // Scroll animation type
+              >
                 Dedicated to bring your ideas to life
               </h1>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-5">
+
+              {/* Add scroll animation to the paragraph */}
+              <p
+                className="text-sm sm:text-base lg:text-lg text-gray-700 mb-5"
+                data-aos="fade-up" // Scroll animation type
+              >
                 Your content for the first column goes here. Your content for
-                the
-                <br /> first column goes here. Your content for the first column
+                the first column goes here. Your content for the first column
                 goes here.
                 <br /> first column goes here. Your content for the first column
                 goes here.
               </p>
+
+              {/* Add scroll animation to the "Get Started" button */}
               <div className="mt-7 sm:text-start lg:text-start">
                 <Link href="/contact-us">
-                  <button className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue">
+                  <button
+                    className="text-xs sm:text-sm md:text-lg font-semibold hover:shadow-xl bg-blue text-white py-2 sm:py-3 px-4 sm:px-6 md:px-7 rounded-full hover:bg-hoblue"
+                    data-aos="fade-up" // Scroll animation type
+                  >
                     Get Started
                   </button>
                 </Link>
@@ -193,17 +220,19 @@ const Banner = () => {
 
           {/* Right Column */}
           {/* <<<<<<< HEAD */}
-          <div className="lg:py-10 py-10 flex justify-center sm:justify-center animate-fade-in-right opacity-0">
-            {/* ======= */}
-            {/* <div className="lg:py-10 py-10 flex justify-center sm:justify-center ">
->>>>>>> main */}
-            <Image
-              src="/images/home/web-scraping.png"
-              alt="hero-image"
-              width={450}
-              height={142}
-              className="max-w-md md:max-w-lg rounded"
-            />
+          <div className="lg:py-10 py-10 flex justify-center sm:justify-center">
+            <div
+              className="flex justify-center"
+              data-aos="fade-left" // Adding the fade-left animation for the image
+            >
+              <Image
+                src="/images/home/web-scraping.png"
+                alt="hero-image"
+                width={450}
+                height={142}
+                className="max-w-md md:max-w-lg rounded"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -227,10 +256,16 @@ const Banner = () => {
       <section className="bg-gradient-to-t from-blue-50 to-white py-16">
         <div className="container mx-auto px-6 text-center">
           {/* Section Title */}
-          <h2 className="text-4xl font-extrabold text-gray-800">
+          <h2
+            className="text-4xl font-extrabold text-gray-800"
+            data-aos="fade-left"
+          >
             Our <span className="text-blue-600">Services</span>
           </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p
+            className="text-gray-600 mt-4 max-w-2xl mx-auto"
+            data-aos="fade-up"
+          >
             Explore our range of web scraping and automation services designed
             to help you extract and utilize data effectively.
           </p>
@@ -239,7 +274,10 @@ const Banner = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
             {/* Web Data Scraping */}
             <Link href="/website-data-scraping-services">
-              <div className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
+              <div
+                className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6"
+                data-aos="fade-left"
+              >
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircleIcon className="w-10 h-10 text-blue-600" />
                 </div>
@@ -254,7 +292,10 @@ const Banner = () => {
             </Link>
             {/* Web Automation */}
             <Link href="/professional-web-automation-services">
-              <div className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
+              <div
+                className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6"
+                data-aos="fade-up"
+              >
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CogIcon className="w-10 h-10 text-green-600" />
                 </div>
@@ -268,7 +309,10 @@ const Banner = () => {
               </div>
             </Link>
             {/* Ecommerce Data Scraping */}
-            <div className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6">
+            <div
+              className="bg-[#2761b9] text-white border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 p-6"
+              data-aos="fade-right"
+            >
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ShoppingBagIcon className="w-10 h-10 text-purple-600" />
               </div>
