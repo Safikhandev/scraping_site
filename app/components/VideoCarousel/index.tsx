@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { FaPlayCircle } from "react-icons/fa";
+// <<<<<<< HEAD
 import { FaUsers, FaDatabase, FaGlobe } from "react-icons/fa";
+// =======
+// >>>>>>> main
 import Image from "next/image";
 import "@/app/globals.css";
 
@@ -15,6 +18,7 @@ const VideoPopup = () => {
 
   return (
     <>
+      {/* <<<<<<< HEAD */}
       <section className="bg-lightgrey py-16">
         <div className="container mx-auto px-4">
           {/* Section Title */}
@@ -28,7 +32,12 @@ const VideoPopup = () => {
           {/* Content */}
           <div className="grid md:grid-cols-3 gap-8 items-start">
             {/* Left Card */}
-            <div className="p-6 text-center">
+            <div
+              className="p-6 text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
               <FaUsers className="text-blue-600 text-6xl mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-800 mb-4">
                 CUSTOMER FOCUS
@@ -42,7 +51,12 @@ const VideoPopup = () => {
             </div>
 
             {/* Middle Card */}
-            <div className="p-6 text-center">
+            <div
+              className="p-6 text-center"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
               <FaDatabase className="text-blue-600 text-6xl mx-auto mb-4" />
               <h3 className="text-xl font-bold text-gray-800 mb-4">
                 DATA QUALITY
@@ -56,7 +70,12 @@ const VideoPopup = () => {
             </div>
 
             {/* Right Card */}
-            <div className="bg-darkblue text-white p-6 rounded-lg shadow-md">
+            <div
+              className="bg-darkblue text-white p-6 rounded-lg shadow-md"
+              data-aos="flip-left"
+              data-aos-delay="400"
+              data-aos-duration="1000"
+            >
               <FaGlobe className="text-white text-6xl mx-auto mb-4" />
               <p className="text-md mb-4">
                 Web Scraping is a Data Scraping Company and web scraping service
@@ -90,6 +109,8 @@ const VideoPopup = () => {
       {/* ------------------------------------------------------------------------------ */}
       {/* ------------------------------------------------------------------------------ */}
       {/* ------------------------------------------------------------------------------ */}
+      {/* =======
+>>>>>>> main */}
       <section className="relative mb-20 isolate overflow-hidden bg-black py-24 sm:py-32">
         <Image
           src="/images/banner/banner.webp"
@@ -109,22 +130,37 @@ const VideoPopup = () => {
           className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
           aria-hidden="true"
         >
-          <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr bg-[#291E3B]  opacity-10"></div>
+          <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr bg-[#291E3B] opacity-10"></div>
         </div>
+
         <div className="w-full max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl text-white font-bold text-center mb-8">
+          {/* Section Title with fade-up animation */}
+          <h2
+            className="text-4xl text-white font-bold text-center mb-8"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             We Are Top IT Expert Services Agency
           </h2>
+
+          {/* Play Button with zoom-in animation */}
           <button
             className="relative flex items-center mx-auto justify-center bg-transparent text-white p-4 rounded-full transition"
             onClick={togglePopup}
+            data-aos="zoom-in"
+            data-aos-duration="1200"
           >
             <span className="absolute inset-0 w-full h-full rounded-full bg-blue-500 animate-pulse wave-animation"></span>
             <FaPlayCircle className="relative z-10 text-8xl text-white" />
           </button>
 
+          {/* Video Popup with slide-in animation */}
           {isPopupOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+            <div
+              className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+              data-aos="fade-in"
+              data-aos-duration="1000"
+            >
               <div className="relative bg-white p-6 rounded-lg max-w-xl w-full">
                 <button
                   className="absolute top-3 right-3 text-gray-800 hover:text-red-600"

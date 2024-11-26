@@ -41,6 +41,7 @@ export default function Home() {
       <Testimonials />
       {/* <Articles /> */}
       {/* <Joinus /> */}
+
       {/* <Insta /> */}
     </main>
   );

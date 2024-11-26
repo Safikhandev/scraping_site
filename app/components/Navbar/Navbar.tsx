@@ -53,7 +53,7 @@ const navigation: NavigationItem[] = [
 
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const toggleDropdown = (menuName: string) => {
     if (openDropdown === menuName) {
@@ -64,10 +64,11 @@ const Navbar = () => {
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
+    const clickedOutside = Object.entries(dropdownRefs.current).every(
+      ([key, ref]) => ref && !ref.contains(event.target as Node)
+    );
+
+    if (clickedOutside) {
       setOpenDropdown(null); // Close dropdown if clicked outside
     }
   };
@@ -107,7 +108,7 @@ const Navbar = () => {
                 <div
                   key={item.name}
                   className="relative group"
-                  ref={dropdownRef}
+                  ref={(el) => (dropdownRefs.current[item.name] = el)}
                 >
                   <div
                     className="flex items-center space-x-1 cursor-pointer"
@@ -138,6 +139,7 @@ const Navbar = () => {
                           <Link
                             key={subItem.name}
                             href={subItem.href}
+                            onClick={() => setOpenDropdown(null)}
                             className="block px-4 py-2 text-gray-600 hover:bg-navyblue hover:text-white"
                           >
                             {subItem.name}
@@ -147,6 +149,7 @@ const Navbar = () => {
                           <Link
                             key={subItem.name}
                             href={subItem.href}
+                            onClick={() => setOpenDropdown(null)}
                             className="block px-4 py-2 text-gray-600 hover:bg-navyblue hover:text-white"
                           >
                             {subItem.name}
